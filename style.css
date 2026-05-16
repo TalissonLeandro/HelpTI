@@ -1,0 +1,293 @@
+/* ===== RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: #1a73e8;
+  padding: 16px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.logo span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #1a73e8, #0d47a1);
+  color: #fff;
+  padding: 80px 32px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+
+.btn {
+  background-color: #fff;
+  color: #1a73e8;
+  padding: 12px 32px;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+/* ===== MÓDULOS ===== */
+.modulos {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 32px;
+}
+
+.modulos h2 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #1a73e8;
+}
+
+.categorias {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.categoria h3 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: #444;
+  border-left: 4px solid #1a73e8;
+  padding-left: 12px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(26, 115, 232, 0.2);
+}
+
+.card .icone {
+  font-size: 2rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* ===== SOBRE ===== */
+.sobre {
+  background-color: #e8f0fe;
+  padding: 60px 32px;
+  text-align: center;
+}
+
+.sobre h2 {
+  font-size: 1.6rem;
+  color: #1a73e8;
+  margin-bottom: 16px;
+}
+
+.sobre p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #1a73e8;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+}
+
+/* ===== PÁGINA DE MÓDULO ===== */
+.modulo-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 32px 60px;
+}
+
+.modulo-container .voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #1a73e8;
+  font-weight: 600;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+}
+
+.modulo-container .voltar:hover {
+  opacity: 0.7;
+}
+
+.modulo-container h1 {
+  font-size: 1.8rem;
+  color: #1a73e8;
+  margin-bottom: 8px;
+}
+
+.modulo-container .subtitulo {
+  color: #777;
+  margin-bottom: 32px;
+  font-size: 0.95rem;
+}
+
+.modulo-container h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 28px 0 10px;
+}
+
+.modulo-container p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.modulo-container ol,
+.modulo-container ul {
+  padding-left: 24px;
+  color: #555;
+  line-height: 2;
+}
+
+.dica {
+  background-color: #e8f0fe;
+  border-left: 4px solid #1a73e8;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin: 24px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.alerta {
+  background-color: #fff3e0;
+  border-left: 4px solid #f57c00;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin: 24px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
