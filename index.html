@@ -3,115 +3,234 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Help TI</title>
+  <title>Help TI — Aprenda tecnologia no seu ritmo</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="Design sem nome.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
+  <!-- NAVBAR -->
+  <header id="navbar">
     <div class="header-inner">
-      <div class="logo">
-        <a href=""></a><img src="Design sem nome.png" alt="Logo Help TI" />
+      <a href="index.html" class="logo" aria-label="Help TI - Página inicial">
+        <img src="Design sem nome.png" alt="Logo Help TI" />
         <span>Help TI</span>
-      </div>
-      <nav>
-        <a href="#modulos">Módulos</a>
-        <a href="#sobre">Sobre</a>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="#modulos" class="nav-link">Módulos</a>
+        <a href="sobre.html" class="nav-link">Sobre nós</a>
       </nav>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- menu mobile -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#modulos" class="mobile-link">Módulos</a>
+      <a href="sobre.html" class="mobile-link">Sobre nós</a>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" aria-label="Apresentação">
+    <!-- elementos decorativos de fundo -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
     <div class="hero-content">
-      <h1>Aprenda tecnologia no seu ritmo</h1>
-      <p>Conteúdo simples e direto para quem está começando a usar o computador.</p>
-      <a href="#modulos" class="btn">Ver módulos</a>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Projeto de Extensão Gratuito
+      </div>
+      <h1>Aprenda tecnologia<br /><span class="hero-highlight">no seu ritmo</span></h1>
+      <p>Conteúdo simples, claro e acessível para quem está dando os primeiros passos no mundo digital.</p>
+      <div class="hero-actions">
+        <a href="#modulos" class="btn btn-primary">
+          Ver módulos
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- ilustração discreta -->
+      <div class="hero-illustration" aria-hidden="true">
+        <div class="floating-card fc-1">
+          <span>📧</span> E-mail criado!
+        </div>
+        <div class="floating-card fc-2">
+          <span>🛡️</span> Navegando com segurança
+        </div>
+        <div class="floating-card fc-3">
+          <span>📁</span> Arquivos organizados
+        </div>
+      </div>
+    </div>
+
+    <!-- wave divisor -->
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#f0f4ff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" aria-label="Números do projeto">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <strong>12</strong>
+        <span>Módulos</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <strong>5</strong>
+        <span>Categorias</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <strong>100%</strong>
+        <span>Gratuito</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <strong>∞</strong>
+        <span>Acessos</span>
+      </div>
     </div>
   </section>
 
   <!-- MÓDULOS -->
-  <section id="modulos" class="modulos">
-    <h2>O que você quer aprender?</h2>
+  <section id="modulos" class="modulos" aria-label="Módulos de aprendizado">
+    <div class="section-header">
+      <span class="section-tag">Conteúdo</span>
+      <h2>O que você quer aprender?</h2>
+      <p>Escolha um tema e comece agora. Cada módulo foi pensado para ser simples e direto.</p>
+    </div>
 
     <div class="categorias">
 
-      <div class="categoria">
-        <h3>📧 Comunicação</h3>
+      <div class="categoria reveal">
+        <div class="categoria-header">
+          <div class="categoria-icon" aria-hidden="true">📧</div>
+          <div>
+            <h3>Comunicação</h3>
+            <span class="categoria-count">2 módulos</span>
+          </div>
+        </div>
         <div class="cards">
           <a href="modulos/criar-email.html" class="card">
-            <span class="icone">✉️</span>
-            <p>Como criar um G-mail</p>
+            <div class="card-icon-wrap" aria-hidden="true">✉️</div>
+            <p>Como criar um e-mail</p>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </a>
           <a href="modulos/reunioes-online.html" class="card">
-            <span class="icone">🎥</span>
+            <div class="card-icon-wrap" aria-hidden="true">🎥</div>
             <p>Como participar de reuniões online</p>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </div>
 
-      <div class="categoria">
-        <h3>📝 Produtividade</h3>
+      <div class="categoria reveal">
+        <div class="categoria-header">
+          <div class="categoria-icon" aria-hidden="true">📝</div>
+          <div>
+            <h3>Produtividade</h3>
+            <span class="categoria-count">3 módulos</span>
+          </div>
+        </div>
         <div class="cards">
           <a href="modulos/usar-word.html" class="card">
-            <span class="icone">📄</span>
+            <div class="card-icon-wrap" aria-hidden="true">📄</div>
             <p>Como usar o Word</p>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </a>
           <a href="modulos/usar-google-docs.html" class="card">
-            <span class="icone">📃</span>
+            <div class="card-icon-wrap" aria-hidden="true">📃</div>
             <p>Como usar Google Docs</p>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </a>
           <a href="modulos/usar-planilhas.html" class="card">
-            <span class="icone">📊</span>
+            <div class="card-icon-wrap" aria-hidden="true">📊</div>
             <p>Como usar planilhas</p>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </div>
 
-      <div class="categoria">
-        <h3>💻 Sistema e Arquivos</h3>
+      <div class="categoria reveal">
+        <div class="categoria-header">
+          <div class="categoria-icon" aria-hidden="true">💻</div>
+          <div>
+            <h3>Sistema e Arquivos</h3>
+            <span class="categoria-count">3 módulos</span>
+          </div>
+        </div>
         <div class="cards">
           <a href="modulos/usar-windows.html" class="card">
-            <span class="icone">🖥️</span>
+            <div class="card-icon-wrap" aria-hidden="true">🖥️</div>
             <p>Como usar o Windows</p>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </a>
           <a href="modulos/organizar-arquivos.html" class="card">
-            <span class="icone">📁</span>
+            <div class="card-icon-wrap" aria-hidden="true">📁</div>
             <p>Como organizar arquivos</p>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </a>
           <a href="modulos/instalar-programas.html" class="card">
-            <span class="icone">⚙️</span>
+            <div class="card-icon-wrap" aria-hidden="true">⚙️</div>
             <p>Como instalar programas</p>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </div>
 
-      <div class="categoria">
-        <h3>🔒 Segurança</h3>
+      <div class="categoria reveal">
+        <div class="categoria-header">
+          <div class="categoria-icon" aria-hidden="true">🔒</div>
+          <div>
+            <h3>Segurança</h3>
+            <span class="categoria-count">3 módulos</span>
+          </div>
+        </div>
         <div class="cards">
           <a href="modulos/evitar-golpes.html" class="card">
-            <span class="icone">🛡️</span>
+            <div class="card-icon-wrap" aria-hidden="true">🛡️</div>
             <p>Como evitar golpes online</p>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </a>
           <a href="modulos/internet-segura.html" class="card">
-            <span class="icone">🌐</span>
+            <div class="card-icon-wrap" aria-hidden="true">🌐</div>
             <p>Como usar a internet com segurança</p>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </a>
           <a href="modulos/fazer-backup.html" class="card">
-            <span class="icone">💾</span>
+            <div class="card-icon-wrap" aria-hidden="true">💾</div>
             <p>Como fazer backup</p>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </div>
 
-      <div class="categoria">
-        <h3>🖨️ Periféricos</h3>
+      <div class="categoria reveal">
+        <div class="categoria-header">
+          <div class="categoria-icon" aria-hidden="true">🖨️</div>
+          <div>
+            <h3>Periféricos</h3>
+            <span class="categoria-count">1 módulo</span>
+          </div>
+        </div>
         <div class="cards">
           <a href="modulos/usar-impressora.html" class="card">
-            <span class="icone">🖨️</span>
+            <div class="card-icon-wrap" aria-hidden="true">🖨️</div>
             <p>Como usar impressora</p>
+            <span class="card-arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </div>
@@ -120,14 +239,35 @@
   </section>
 
   <!-- SOBRE -->
-  <section id="sobre" class="sobre">
-    <h2>Sobre o Help TI</h2>
-    <p>O Help TI é um projeto de extensão criado para ajudar pessoas a darem os primeiros passos no mundo da tecnologia. Nosso conteúdo é gratuito, simples e feito para todos.</p>
+  <section id="sobre" class="sobre reveal" aria-label="Sobre o projeto">
+    <div class="sobre-inner">
+      <div class="sobre-icon" aria-hidden="true">💡</div>
+      <span class="section-tag">Sobre o projeto</span>
+      <h2>Help TI</h2>
+      <p>
+        Um projeto de extensão criado para ajudar pessoas a darem os primeiros passos 
+        no mundo da tecnologia. Nosso conteúdo é <strong>gratuito</strong>, simples e feito para todos — 
+        sem jargões, sem complicação.
+      </p>
+      <div class="sobre-tags" aria-label="Características do projeto">
+        <span class="tag">✅ Gratuito</span>
+        <span class="tag">📱 Acessível</span>
+        <span class="tag">🎓 Educacional</span>
+        <span class="tag">🤝 Para todos</span>
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Help TI — Projeto de Extensão</p>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="Design sem nome.png" alt="Logo Help TI" />
+        <span>Help TI</span>
+      </div>
+      <p class="footer-copy">© 2025 Help TI — Projeto de Extensão</p>
+      <p class="footer-sub">Conteúdo gratuito para todos</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
