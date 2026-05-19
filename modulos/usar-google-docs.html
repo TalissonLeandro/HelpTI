@@ -8,21 +8,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="icon" href="../Design sem nome.png" type="image/png" />
+  <link rel="icon" href="../logo1.png" type="image/png" />
   <link rel="stylesheet" href="../accessibility.css" />
 </head>
 <body>
 
-  <header>
+  <!-- NAVBAR -->
+  <header id="navbar">
     <div class="header-inner">
-      <div class="logo">
-        <img src="../Design sem nome.png" alt="Logo Help TI" />
+      <a href="../index.html" class="logo" aria-label="Help TI - Página inicial">
+        <img src="../logo1.png" alt="Logo Help TI" />
         <span>Help TI</span>
-      </div>
-      <nav>
-        <a href="../index.html#modulos">Módulos</a>
-        <a href="../index.html#sobre">Sobre</a>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="../index.html#modulos" class="nav-link">Módulos</a>
+        <a href="../sobre.html" class="nav-link">Sobre o projeto</a>
       </nav>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="../index.html#modulos" class="mobile-link">Módulos</a>
+      <a href="../sobre.html" class="mobile-link">Sobre o projeto</a>
     </div>
   </header>
 
@@ -88,6 +96,7 @@
     <p>© 2025 Help TI — Projeto de Extensão</p>
   </footer>
 
+  <script src="../script.js"></script>
   <script src="../accessibility.js"></script>
 </body>
 </html>

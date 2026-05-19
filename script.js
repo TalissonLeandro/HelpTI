@@ -96,3 +96,80 @@ const cardObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.cards').forEach(el => {
   cardObserver.observe(el);
 });
+
+/* ============================================================
+   TROCA AUTOMÁTICA DE LOGO (claro/escuro)
+   ============================================================ */
+(function () {
+
+  // ----------------------------------------------------------
+  // Detecta se a página está dentro da pasta /modulos/
+  // para montar o caminho correto dos arquivos de logo
+  // ----------------------------------------------------------
+  const isSubpage = window.location.pathname.includes('/modulos/');
+  const base      = isSubpage ? '../' : '';
+
+  const LOGO_LIGHT = base + 'logo1.png'; // tema claro
+  const LOGO_DARK  = base + 'logo2.png'; // tema escuro
+
+  // ----------------------------------------------------------
+  // Localiza a imagem da logo dentro do <header>
+  // Tenta seletores do mais específico ao mais genérico
+  // ----------------------------------------------------------
+  function findLogoImg() {
+    return (
+      document.querySelector('header .logo img')   ||
+      document.querySelector('header .navbar img') ||
+      document.querySelector('header a img')       ||
+      document.querySelector('header img')         ||
+      null
+    );
+  }
+
+  // ----------------------------------------------------------
+  // Aplica a logo correta com base no estado atual do tema
+  // ----------------------------------------------------------
+  function updateLogo() {
+    const img = findLogoImg();
+    if (!img) return;
+
+    const isDark = document.documentElement.classList.contains('dark-mode');
+    const newSrc = isDark ? LOGO_DARK : LOGO_LIGHT;
+
+    // atualiza src e alt sempre (garante consistência)
+    img.src = newSrc;
+    img.alt = 'Logo Help TI';
+  }
+
+  // ----------------------------------------------------------
+  // Observa mudanças de classe no <html> em tempo real
+  // (ativado pelo painel de acessibilidade)
+  // ----------------------------------------------------------
+  const themeObserver = new MutationObserver(updateLogo);
+
+  themeObserver.observe(document.documentElement, {
+    attributes:      true,
+    attributeFilter: ['class'],
+  });
+
+  // ----------------------------------------------------------
+  // Observa preferência do sistema operacional
+  // Só aplica se o usuário não tiver preferência manual salva
+  // ----------------------------------------------------------
+  window.matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', () => {
+      if (localStorage.getItem('helpti_dark') === null) {
+        updateLogo();
+      }
+    });
+
+  // ----------------------------------------------------------
+  // Aplica logo imediatamente ao carregar a página
+  // ----------------------------------------------------------
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateLogo);
+  } else {
+    updateLogo();
+  }
+
+})();

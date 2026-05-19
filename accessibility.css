@@ -51,13 +51,19 @@ html {
   color: #e2e8f0;
 }
 
+/* ----- NAVBAR ----- */
 .dark-mode #navbar {
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.95);
   border-bottom-color: rgba(255,255,255,0.08);
 }
 
 .dark-mode #navbar.scrolled {
-  background: rgba(15, 23, 42, 0.96);
+  background: rgba(15, 23, 42, 0.98);
+}
+
+.dark-mode body.has-hero #navbar:not(.scrolled) {
+  background: rgba(15, 23, 42, 0.3);
+  border-bottom-color: rgba(255,255,255,0.08);
 }
 
 .dark-mode .logo span {
@@ -65,7 +71,7 @@ html {
 }
 
 .dark-mode .nav-link {
-  color: #94a3b8;
+  color: #cbd5e1;
 }
 
 .dark-mode .nav-link:hover {
@@ -73,9 +79,127 @@ html {
   background: rgba(96, 165, 250, 0.1);
 }
 
+.dark-mode .mobile-menu {
+  background: rgba(15, 23, 42, 0.98);
+  border-top-color: #1e293b;
+}
+
+.dark-mode .mobile-link {
+  color: #cbd5e1;
+}
+
+.dark-mode .mobile-link:hover {
+  background: rgba(96, 165, 250, 0.1);
+  color: #93c5fd;
+}
+
+/* ----- HERO ----- */
+/* títulos: branco puro em qualquer fundo escuro */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+  color: #ffffff;
+}
+
+/* garante que o gradiente do hero-highlight não some */
+.dark-mode .hero-highlight {
+  background: linear-gradient(90deg, #93c5fd, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark-mode .hero-content > p {
+  color: rgba(255,255,255,0.75);
+}
+
+.dark-mode .hero-badge {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.9);
+}
+
+.dark-mode .floating-card {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.85);
+}
+
+/* ----- BOTÕES ----- */
+/* btn-primary: fundo branco, texto escuro — máximo contraste */
+.dark-mode .btn-primary {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+}
+
+.dark-mode .btn-primary:hover {
+  background: #f1f5f9;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* btn-ghost no hero */
+.dark-mode .btn-ghost {
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.25);
+}
+
+.dark-mode .btn-ghost:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+/* ----- SECTION TAG / BADGES ----- */
+.dark-mode .section-tag {
+  background: rgba(96, 165, 250, 0.2);
+  color: #93c5fd;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+/* ----- STATS ----- */
+.dark-mode .stats {
+  background: #1e293b;
+}
+
+.dark-mode .stat-item strong {
+  color: #93c5fd;
+}
+
+.dark-mode .stat-item span {
+  color: #94a3b8;
+}
+
+.dark-mode .stat-divider {
+  background: #334155;
+}
+
+/* ----- MÓDULOS / CATEGORIAS ----- */
+.dark-mode .section-header h2 {
+  color: #ffffff;
+}
+
+.dark-mode .section-header p {
+  color: #94a3b8;
+}
+
+.dark-mode .categoria-icon {
+  background: #1e293b;
+}
+
+.dark-mode .categoria-header h3 {
+  color: #f1f5f9;
+}
+
+/* "X módulos" — contraste reforçado */
+.dark-mode .categoria-count {
+  color: #94a3b8;
+}
+
+/* ----- CARDS ----- */
+/* fundo levemente mais claro que o body (#0f172a) + borda sutil */
 .dark-mode .card {
   background: #1e293b;
-  border-color: #334155;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode .card:hover {
@@ -92,39 +216,80 @@ html {
 }
 
 .dark-mode .card p {
-  color: #94a3b8;
+  color: #cbd5e1;
 }
 
-.dark-mode .categoria-icon {
-  background: #1e293b;
+.dark-mode .card-arrow {
+  color: #60a5fa;
 }
 
-.dark-mode .categoria-header h3 {
+/* ----- SEÇÃO SOBRE (index) ----- */
+.dark-mode .sobre h2 {
+  color: #ffffff;
+}
+
+.dark-mode .sobre p {
+  color: rgba(255,255,255,0.75);
+}
+
+.dark-mode .sobre p strong {
+  color: #ffffff;
+}
+
+/* tags "✅ Gratuito" etc. */
+.dark-mode .tag {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
   color: #e2e8f0;
 }
 
-.dark-mode .section-header h2 {
+/* ----- FOOTER ----- */
+.dark-mode footer {
+  background: #020617;
+}
+
+.dark-mode .footer-copy,
+.dark-mode .footer-sub {
+  color: #64748b;
+}
+
+.dark-mode .footer-logo span {
+  color: rgba(255,255,255,0.5);
+}
+
+/* ----- PÁGINAS DE MÓDULO ----- */
+.dark-mode .modulo-container h1 {
+  color: #ffffff;
+}
+
+.dark-mode .modulo-container h2 {
   color: #f1f5f9;
 }
 
-.dark-mode .section-header p {
-  color: #64748b;
+.dark-mode .modulo-container .subtitulo {
+  color: #94a3b8;
+  border-bottom-color: #1e293b;
 }
 
-.dark-mode .stats {
-  background: #1e293b;
+.dark-mode .modulo-container p,
+.dark-mode .modulo-container ol,
+.dark-mode .modulo-container ul {
+  color: #94a3b8;
 }
 
-.dark-mode .stat-divider {
-  background: #334155;
+.dark-mode .modulo-container strong {
+  color: #e2e8f0;
 }
 
-.dark-mode .stat-item span {
-  color: #64748b;
+/* botão "← Voltar" nas páginas de módulo */
+.dark-mode .modulo-container .voltar {
+  background: rgba(255,255,255,0.1);
+  color: #93c5fd;
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
-.dark-mode footer {
-  background: #020617;
+.dark-mode .modulo-container .voltar:hover {
+  background: rgba(255,255,255,0.16);
 }
 
 .dark-mode .dica {
@@ -139,27 +304,34 @@ html {
   color: #cbd5e1;
 }
 
-.dark-mode .modulo-container .subtitulo {
-  color: #64748b;
-  border-bottom-color: #1e293b;
+/* ----- PÁGINA SOBRE NÓS ----- */
+/* hero da página sobre */
+.dark-mode .sobre-page-header h1 {
+  color: #ffffff;
 }
 
-.dark-mode .modulo-container h2 {
-  color: #e2e8f0;
+/* badge "Projeto de Extensão" */
+.dark-mode .sobre-page-header .section-tag {
+  background: rgba(255,255,255,0.15);
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.25);
 }
 
-.dark-mode .modulo-container p,
-.dark-mode .modulo-container ol,
-.dark-mode .modulo-container ul {
-  color: #94a3b8;
+/* botão "← Voltar para o início" */
+.dark-mode .sobre-page-content .voltar {
+  background: rgba(255,255,255,0.12);
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.2);
 }
 
-.dark-mode .modulo-container strong {
-  color: #e2e8f0;
+.dark-mode .sobre-page-content .voltar:hover {
+  background: rgba(255,255,255,0.2);
 }
 
+/* card branco do corpo */
 .dark-mode .sobre-page-body {
   background: #1e293b;
+  border: 1px solid rgba(255,255,255,0.1);
   box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
@@ -171,48 +343,41 @@ html {
   color: #f1f5f9;
 }
 
+/* destaque acadêmico */
 .dark-mode .sobre-page-destaque {
   background: #0f172a;
-  border-color: #1e3a8a;
+  border-color: rgba(96,165,250,0.3);
 }
 
 .dark-mode .sobre-page-destaque p {
   color: #94a3b8;
 }
 
+.dark-mode .sobre-page-destaque p strong {
+  color: #93c5fd;
+}
+
+/* foto */
 .dark-mode .sobre-foto-legenda {
-  color: #e2e8f0;
+  color: #f1f5f9;
 }
 
 .dark-mode .sobre-foto-cargo {
   color: #94a3b8;
 }
 
+/* cards de valores */
 .dark-mode .valor-item {
   background: #0f172a;
-  border-color: #1e293b;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .dark-mode .valor-item strong {
-  color: #e2e8f0;
+  color: #f1f5f9;
 }
 
 .dark-mode .valor-item p {
   color: #64748b;
-}
-
-.dark-mode .mobile-menu {
-  background: rgba(15, 23, 42, 0.98);
-  border-top-color: #1e293b;
-}
-
-.dark-mode .mobile-link {
-  color: #94a3b8;
-}
-
-.dark-mode .mobile-link:hover {
-  background: rgba(96, 165, 250, 0.1);
-  color: #93c5fd;
 }
 
 /* ===== ALTO CONTRASTE ===== */
